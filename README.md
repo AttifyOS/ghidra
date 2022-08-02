@@ -1,2 +1,3 @@
-# ghidra
-Ghidra packaged for AttifyOS
+# Ghidra
+
+Ghidra is a software reverse engineering (SRE) framework.
