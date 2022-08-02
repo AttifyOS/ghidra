@@ -1,4 +1,3 @@
-[package_detail]
 name = "ghidra"
 description = "Ghidra is a software reverse engineering (SRE) framework"
 version = "10.1.5"
