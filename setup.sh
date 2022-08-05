@@ -31,7 +31,7 @@ install() {
   wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.1.5_build/ghidra_10.1.5_PUBLIC_20220726.zip -O $APM_TMP_DIR/ghidra_10.1.5_PUBLIC_20220726.zip
   unzip $APM_TMP_DIR/ghidra_10.1.5_PUBLIC_20220726.zip -d $APM_PKG_INSTALL_DIR
 
-  wget https://corretto.aws/downloads/resources/11.0.16.8.1/amazon-corretto-11.0.16.8.1-linux-x64.tar.gz O $APM_TMP_DIR/amazon-corretto-11.0.16.8.1-linux-x64.tar.gz
+  wget https://corretto.aws/downloads/resources/11.0.16.8.1/amazon-corretto-11.0.16.8.1-linux-x64.tar.gz -O $APM_TMP_DIR/amazon-corretto-11.0.16.8.1-linux-x64.tar.gz
   tar xf $APM_TMP_DIR/amazon-corretto-11.0.16.8.1-linux-x64.tar.gz -C $APM_PKG_INSTALL_DIR
 
   echo "#/usr/bin/env sh" > $APM_PKG_BIN_DIR/ghidra
