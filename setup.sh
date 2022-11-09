@@ -28,21 +28,22 @@ check_env() {
 }
 
 install() {
-  wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.1.5_build/ghidra_10.1.5_PUBLIC_20220726.zip -O $APM_TMP_DIR/ghidra_10.1.5_PUBLIC_20220726.zip
-  unzip $APM_TMP_DIR/ghidra_10.1.5_PUBLIC_20220726.zip -d $APM_PKG_INSTALL_DIR
+  wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.2_build/ghidra_10.2_PUBLIC_20221101.zip -O $APM_TMP_DIR/ghidra_10.2_PUBLIC_20221101.zip
+  unzip $APM_TMP_DIR/ghidra_10.2_PUBLIC_20221101.zip -d $APM_PKG_INSTALL_DIR
+  rm $APM_TMP_DIR/ghidra_10.2_PUBLIC_20221101.zip
 
   wget https://corretto.aws/downloads/resources/11.0.16.8.1/amazon-corretto-11.0.16.8.1-linux-x64.tar.gz -O $APM_TMP_DIR/amazon-corretto-11.0.16.8.1-linux-x64.tar.gz
   tar xf $APM_TMP_DIR/amazon-corretto-11.0.16.8.1-linux-x64.tar.gz -C $APM_PKG_INSTALL_DIR
 
   echo "#!/usr/bin/env sh" > $APM_PKG_BIN_DIR/ghidra
   echo "export PATH=$APM_PKG_INSTALL_DIR/amazon-corretto-11.0.16.8.1-linux-x64/bin/:\$PATH" >> $APM_PKG_BIN_DIR/ghidra
-  echo "$APM_PKG_INSTALL_DIR/ghidra_10.1.5_PUBLIC/ghidraRun \"\$@\"" >> $APM_PKG_BIN_DIR/ghidra
+  echo "$APM_PKG_INSTALL_DIR/ghidra_10.2_PUBLIC/ghidraRun \"\$@\"" >> $APM_PKG_BIN_DIR/ghidra
   chmod +x $APM_PKG_BIN_DIR/ghidra
 }
 
 uninstall() {
   rm $APM_PKG_BIN_DIR/ghidra
-  rm -rf $APM_PKG_INSTALL_DIR/ghidra_10.1.5_PUBLIC
+  rm -rf $APM_PKG_INSTALL_DIR/ghidra_10.2_PUBLIC
   rm -rf $APM_PKG_INSTALL_DIR/amazon-corretto-11.0.16.8.1-linux-x64
 }
 
